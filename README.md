@@ -1,1 +1,1 @@
-# polynomial-integration-calculator-remastered
+# polynomial-integration-calculator-remastered (WIP)
