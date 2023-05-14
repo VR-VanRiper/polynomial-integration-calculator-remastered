@@ -3,12 +3,13 @@
 #include "integralTentu.h"
 #include <math.h>
 #include "validasiInput.h"
-string integralTentu(Polynomial poly) {
+#include <fstream>
+
+void integralTentu(Polynomial poly) {
 	stringstream ss;
     int i, j;
 
 batasInteg:
-    cout << endl;
     cout << endl;
     double valBawah, valAtas;
     cout << "Masukkan batas bawah: "; cin >> valBawah;
@@ -21,10 +22,8 @@ batasInteg:
         cout << "Masukkan invalid, coba kembali \n";
         goto batasInteg;
     }
-
-
-    ss << endl << endl;
-    cout << "Hasil integral tentunya untuk batas bawah = " << valBawah << " dan batas atas = " << valAtas << " adalah: ";
+    ss << endl;
+    ss << "Hasil integral tentunya untuk batas bawah = " << valBawah << " dan batas atas = " << valAtas << " adalah: ";
     for (i = poly.suku; i > 0; i--) {
         int pangInteg = poly.pang[i] + 1;
 
@@ -84,8 +83,13 @@ batasInteg:
     for (i = poly.suku; i > 0; i--) {
         hasilIntegTentu = hasilIntegTentu + poly.koef[i];
     }
+    
+    ss << hasilIntegTentu;
+    ss << endl << endl;
 
-    ss  << hasilIntegTentu;
-	
-	 return ss.str();
+    string hasil = ss.str();
+    cout << hasil << endl << endl;
+    ofstream outfile("history.txt", ios::app);
+    outfile << hasil;
+    outfile.close();
 }
