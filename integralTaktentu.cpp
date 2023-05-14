@@ -3,12 +3,12 @@
 #include <math.h>
 #include <iostream>
 #include <sstream>
+#include <fstream>
 using namespace std;
 
-string integralTaktentu(Polynomial poly) {
+void integralTaktentu(Polynomial poly) {
     stringstream ss;
     int i, j;
-    ss << endl;
 
     ss << endl;
     ss << "Hasil integral tak tentunya adalah: ";
@@ -43,6 +43,11 @@ string integralTaktentu(Polynomial poly) {
         }
     }
     ss << "C";
+    ss << endl;
 
-    return  ss.str();
+    string hasil = ss.str();
+    cout << hasil << endl;
+    ofstream outfile("history.txt", ios::app);
+    outfile << hasil << endl;
+    outfile.close();
 }
