@@ -4,6 +4,6 @@
 #include "polynomial.h"
 #include "validasiInput.h"
 
-string integralTaktentu(Polynomial poly);
+void integralTaktentu(Polynomial poly);
 
 #endif
