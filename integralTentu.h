@@ -5,6 +5,6 @@
 #include "validasiInput.h"
 #include <sstream> 
 
-string integralTentu(Polynomial poly);
+void integralTentu(Polynomial poly);
 
 #endif
