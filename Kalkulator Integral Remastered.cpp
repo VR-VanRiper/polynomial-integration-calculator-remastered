@@ -15,7 +15,7 @@ int main()
     cout << endl;
     cout << "********************************************************** \n";
     cout << "******* SELAMAT DATANG DI KALKULATOR KELOMPOK KAMI! ****** \n";
-    cout << "******************** BY KELOMPOK 2 *********************** \n";
+    cout << "******************** BY KELOMPOK 1 *********************** \n";
     int pilInteg;
     char ulangpilInteg;
 
@@ -26,7 +26,7 @@ pilpolIntegral:
         cout << "1. Integral tak tentu \n";
         cout << "2. Integral tentu \n";
         cout << "Masukkan 0 untuk membatalkan pilihan. \n";
-        cout << "Masukkan 69 untuk mengakses perhitungan. \n";
+        cout << "Masukkan 69 untuk mengakses riwayat perhitungan. \n";
         cout << "Pilihan anda: "; cin >> pilInteg;
 
         while (cin.fail()) {
@@ -42,31 +42,24 @@ pilpolIntegral:
         {
             cout << endl;
             cout << "Anda memilih *Integral tentu*";
-            string result1 = integralTaktentu(polynomial());
-            cout << result1;
-            ofstream outfile("output.txt", ios::app);
-            outfile << result1;
-            outfile.close();
+            integralTaktentu(polynomial());
             break;
         }
         case 2:
         {
             cout << endl;
             cout << "Anda memilih *Integral tentu*";
-            string result2 = integralTentu(polynomial());
-            cout << result2;
-            ofstream outfile("output.txt", ios::app);
-            outfile << result2;
-            outfile.close();
+            integralTentu(polynomial());
             break;
         }
         case 69:
             {
             cout << endl;
             cout << "Anda memilih untuk mengakses perhitungan.";
+            cout << endl << endl;
             ifstream myFile;
             char text;
-            myFile.open("output.txt");
+            myFile.open("history.txt");
             while (!myFile.eof()) {
                 myFile.get(text);
                 cout << text;
