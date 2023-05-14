@@ -1,7 +1,0 @@
-
-
-Hasil integral tak tentunya adalah: 1x^3+5ln(|x|)+1x^4+C
-
-Hasil integral tak tentunya adalah: 1x^4+2ln(|x|)+(10/16)x^16+C
-
-(3/2)x^2+(4/6)x^6+(4/3)x^3 = (3/2)(2)^2+(4/6)(2)^6+(4/3)(2)^3-((3/2)(1)^2)+((4/6)(1)^6)+((4/3)(1)^3) = 10
