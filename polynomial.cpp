@@ -1,5 +1,7 @@
 #include "polynomial.h"
 #include "validasiInput.h"
+#include <sstream>
+#include <fstream>
 
 Polynomial polynomial() {
     Polynomial poly;
@@ -48,19 +50,23 @@ kalkulasiinter:
     }
 
     cout << endl;
-    cout << "Bentuk polinomialnya adalah: ";
+    poly.ss << "Bentuk polinomialnya adalah: ";
     for (i = poly.suku; i > 0; i--) {
         if (poly.koef[i] != 0) {
-            cout << poly.koef[i];
+            poly.ss << poly.koef[i];
             if (poly.pang[i] != 0) {
-                cout << poly.var << "^" << poly.pang[i];
+                poly.ss << poly.var << "^" << poly.pang[i];
             }
         }
         if (poly.koef[i - 1] > 0) {
-            cout << "+";
+            poly.ss << "+";
         }
     }
 
-    cout << endl;
+    string hasil = poly.ss.str();
+    cout << hasil << endl;
+    ofstream outfile("history.txt", ios::app);
+    outfile << hasil;
+    outfile.close();
     return poly;
 }
